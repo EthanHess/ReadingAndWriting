@@ -121,9 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				1F66C19D2346627E0006B1DE /* Resources */,
-				1F66C19A2346613B0006B1DE /* ContentService */,
 				1F66C16C234661310006B1DE /* AppDelegate.swift */,
 				1F66C16E234661310006B1DE /* ViewController.swift */,
+				1F66C19B2346614F0006B1DE /* ContentService.swift */,
 				2703ECF827FBB4C1005D64A6 /* ImagePresenter.swift */,
 				27A97AC227A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift */,
 				272FE08E274DC5B200033906 /* FeedCell.swift */,
@@ -156,14 +156,6 @@
 				1F66C18E234661330006B1DE /* Info.plist */,
 			);
 			path = "DoorDashTPS-ItemDetailUITests";
-			sourceTree = "<group>";
-		};
-		1F66C19A2346613B0006B1DE /* ContentService */ = {
-			isa = PBXGroup;
-			children = (
-				1F66C19B2346614F0006B1DE /* ContentService.swift */,
-			);
-			path = ContentService;
 			sourceTree = "<group>";
 		};
 		1F66C19D2346627E0006B1DE /* Resources */ = {
