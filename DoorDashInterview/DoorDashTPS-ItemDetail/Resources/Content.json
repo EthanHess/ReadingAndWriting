@@ -1,0 +1,20 @@
+{
+    "header_image_url": "https://cdn.doordash.com/media/photos/f620809c-b748-4a6a-b8f8-e56e368d80cb-retina-large.jpg",
+    "content_items": [
+        {
+            "title": "Title 1",
+            "image_url": "https://cdn.doordash.com/media/photos/17547232-c058-493c-a168-379c187ce036-retina-large.png",
+            "content": "Lorem ipsum dolor sit amet, ad vis sale philosophia suscipiantur. Forensibus ullamcorper vim ea. Cu mea inani quaestio, eu nec solum veritus, habemus platonem has ea. In vix detraxit tacimates, impetus quaeque molestie nec in, sed"
+        },
+        {
+            "title": "Title 2",
+            "image_url": "https://cdn.doordash.com/media/photos/68eb1729-778a-4b32-9f0d-4dce9515eb0e-retina-large-jpeg",
+            "content": "Melius ancillae mei ut. Pri vivendo nominavi molestiae at, officiis legendos est ad. Eros meis dolorem in vim, te est tibique constituto accommodare, sea suas complectitur comprehensam cu. Option insolens has ut, ut vis quot veri consetetur"
+        },
+        {
+            "title": null,
+            "image_url": null,
+            "content": "Lorem ipsum dolor sit amet, ad vis sale philosophia suscipiantur. Forensibus ullamcorper vim ea. Cu mea inani quaestio, eu nec solum veritus, habemus platonem has ea. In vix detraxit tacimates, impetus quaeque molestie nec in, sed ut delectus suscipiantur. Amet docendi officiis ad sea, et debitis deseruisse vix. Sed tota ancillae at. No munere eruditi usu, pro vocent lobortis percipitur eu."
+        }
+    ]
+}
