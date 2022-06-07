@@ -15,7 +15,7 @@ class FeedCell: UITableViewCell {
     //MARK: A subject that broadcasts elements to downstream subscribers.
     var actionPublisher = PassthroughSubject<Action, Never>()
     
-    private var currentItem: ContentItem!
+    private var currentItem: ContentItem?
     private var currentItemDict: [String : Any]!
 
     var theTitleLabel : UILabel = {
@@ -58,11 +58,11 @@ class FeedCell: UITableViewCell {
     }
     
     func publishAction() {
-        if currentItem == nil {
-            print("No cur item")
+        guard let theItem = currentItem else {
+            print("No item")
             return
         }
-        actionPublisher.send(.showContent(currentItem))
+        actionPublisher.send(.showContent(theItem))
     }
 
     func populate(with item: ContentItem) {
@@ -173,7 +173,7 @@ class FeedCell: UITableViewCell {
 
 @available(iOS 13.0, *)
 extension FeedCell {
-    enum Action { //TODO add more
+    enum Action { //TODO add others
         case showContent(ContentItem)
     }
 }

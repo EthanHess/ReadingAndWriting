@@ -44,29 +44,28 @@ class ImagePresenter: UIView {
         configureViews()
     }
     
+    //MARK: Extension already takes care of caching
+    
     fileprivate func imageOnMain(_ imageString: String) {
         guard let theURL = URL(string: imageString) else {
             return
         }
-        DispatchQueue.main.async {
-            self.mainImageView.downloadImageFromURL(theURL) { response in
-                DispatchQueue.main.async {
-                    guard let theImage = response.image else {
-                        if #available(iOS 13.0, *) {
-                            self.downloadedFinished(UIImage(systemName: "face.smiling")!)
-                        } else {
-                            // Fallback on earlier versions
-                        }
-                        return
+        self.mainImageView.downloadImageFromURL(theURL) { response in
+            DispatchQueue.main.async {
+                guard let theImage = response.image else {
+                    if #available(iOS 13.0, *) {
+                        self.downloadedFinished(UIImage(systemName: "face.smiling")!)
+                    } else {
+                        // Fallback on earlier versions
                     }
-                    self.downloadedFinished(theImage)
+                    return
                 }
+                self.downloadedFinished(theImage)
             }
         }
     }
     
     fileprivate func downloadedFinished(_ theImage: UIImage) {
-        //self.activityIndicator.stopAnimating()
         self.mainImageView.image = theImage
     }
     
