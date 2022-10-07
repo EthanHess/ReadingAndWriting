@@ -145,14 +145,6 @@ class ViewController: UIViewController {
     }
     
     fileprivate func fetchDataAA(_ path: String) {
-        
-//        let dispatchGroup = DispatchGroup()
-//        dispatchGroup.enter()
-//        dispatchGroup.leave()
-//        dispatchGroup.notify(queue: .main) {
-//
-//        }
-
         //MARK: A unit of asynchronous work.
         Task {
             await feedDataAsyncAwait(path)
@@ -247,7 +239,8 @@ extension ViewController: TableFunctions {
             let theCell = tableView.dequeueReusableCell(withIdentifier: "feedCell") as! FeedCell
             theCell.setUpViews()
         
-            //MARK: NOTE: Usually a reference to self should be weak in these closures
+            //MARK: NOTE: Usually a reference to self should be weak in these closures due to mutual / prolonged retention (between self and the closure)
+            
             theCell.actionPublisher.sink(receiveValue: { [weak self] action in
                 switch action {
                 case .showContent(let theItem):

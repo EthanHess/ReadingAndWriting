@@ -26,12 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             print("IOS 13+")
             let home = ViewController()
+            let cgdView = GCDViewController()
             
             let homeItem = UITabBarItem(title: "Home", image: nil, tag: 0)
             home.tabBarItem = homeItem
             
+            let cgdItem = UITabBarItem(title: "GCD", image: nil, tag: 1)
+            cgdView.tabBarItem = cgdItem
+            
             let theTabController = UITabBarController()
-            theTabController.viewControllers = [home]
+            theTabController.viewControllers = [home, cgdView]
             
             application.keyWindow?.rootViewController = theTabController
         } else {
