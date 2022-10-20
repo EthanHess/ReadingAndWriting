@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         configureTable()
-        
+        view.backgroundColor = .white
         // self.gradientForView(self.view, .white, .lightGray)
     }
     

@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import UIKit
 
+//For Main VC (ViewController)
 struct ContentService {
     /// fetches data for the content of the list
     func getItemData() {

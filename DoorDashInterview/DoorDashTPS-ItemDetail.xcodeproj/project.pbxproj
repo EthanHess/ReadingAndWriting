@@ -19,9 +19,13 @@
 		1FF8D5692348083800DB1A4B /* ItemDetailTPSSpec.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF8D5682348083800DB1A4B /* ItemDetailTPSSpec.png */; };
 		2703ECF927FBB4C1005D64A6 /* ImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2703ECF827FBB4C1005D64A6 /* ImagePresenter.swift */; };
 		270DEAA027E920A300B70784 /* ImageHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DEA9F27E920A300B70784 /* ImageHeaderCell.swift */; };
+		271933CD28F5F663004466C9 /* People.json in Resources */ = {isa = PBXBuildFile; fileRef = 271933CC28F5F663004466C9 /* People.json */; };
+		271933CF28F5F699004466C9 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271933CE28F5F699004466C9 /* DataFetcher.swift */; };
 		272FE08F274DC5B200033906 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FE08E274DC5B200033906 /* FeedCell.swift */; };
 		275ABB2928F091DD00BAEC3E /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275ABB2828F091DD00BAEC3E /* GCDViewController.swift */; };
 		27A97AC327A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A97AC227A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift */; };
+		27BBEBCE28FCFD3900FE4A54 /* NetworkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBEBCD28FCFD3900FE4A54 /* NetworkingViewController.swift */; };
+		27BBEBD028FCFD5400FE4A54 /* Result.json in Resources */ = {isa = PBXBuildFile; fileRef = 27BBEBCF28FCFD5400FE4A54 /* Result.json */; };
 		27C428F527B4450400FD302C /* TimeSpaceMeasurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C428F427B4450400FD302C /* TimeSpaceMeasurer.swift */; };
 		27C428F727B4476200FD302C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C428F627B4476200FD302C /* CoreDataStack.swift */; };
 		27C5401B27BC7419007C7EE1 /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C5401A27BC7419007C7EE1 /* StoreController.swift */; };
@@ -65,9 +69,13 @@
 		1FF8D5682348083800DB1A4B /* ItemDetailTPSSpec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ItemDetailTPSSpec.png; sourceTree = "<group>"; };
 		2703ECF827FBB4C1005D64A6 /* ImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenter.swift; sourceTree = "<group>"; };
 		270DEA9F27E920A300B70784 /* ImageHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHeaderCell.swift; sourceTree = "<group>"; };
+		271933CC28F5F663004466C9 /* People.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = People.json; sourceTree = "<group>"; };
+		271933CE28F5F699004466C9 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		272FE08E274DC5B200033906 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		275ABB2828F091DD00BAEC3E /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 		27A97AC227A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodChoiceScrollPicker.swift; sourceTree = "<group>"; };
+		27BBEBCD28FCFD3900FE4A54 /* NetworkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingViewController.swift; sourceTree = "<group>"; };
+		27BBEBCF28FCFD5400FE4A54 /* Result.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Result.json; sourceTree = "<group>"; };
 		27C428F427B4450400FD302C /* TimeSpaceMeasurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpaceMeasurer.swift; sourceTree = "<group>"; };
 		27C428F627B4476200FD302C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		27C5401A27BC7419007C7EE1 /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
@@ -122,8 +130,8 @@
 		1F66C16B234661310006B1DE /* DoorDashTPS-ItemDetail */ = {
 			isa = PBXGroup;
 			children = (
-				1F66C19D2346627E0006B1DE /* Resources */,
 				1F66C16C234661310006B1DE /* AppDelegate.swift */,
+				1F66C19D2346627E0006B1DE /* Resources */,
 				275ABB2A28F091F700BAEC3E /* VCs */,
 				275ABB2D28F0929F00BAEC3E /* Subviews */,
 				275ABB2C28F0928D00BAEC3E /* Helper */,
@@ -160,6 +168,8 @@
 				1F66C1A02347C0D30006B1DE /* README.md */,
 				1FF8D5682348083800DB1A4B /* ItemDetailTPSSpec.png */,
 				1F66C19E2347BB4F0006B1DE /* Content.json */,
+				271933CC28F5F663004466C9 /* People.json */,
+				27BBEBCF28FCFD5400FE4A54 /* Result.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -169,6 +179,7 @@
 			children = (
 				1F66C16E234661310006B1DE /* ViewController.swift */,
 				275ABB2828F091DD00BAEC3E /* GCDViewController.swift */,
+				27BBEBCD28FCFD3900FE4A54 /* NetworkingViewController.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -188,6 +199,7 @@
 				1F66C19B2346614F0006B1DE /* ContentService.swift */,
 				27C428F427B4450400FD302C /* TimeSpaceMeasurer.swift */,
 				27E4D4F327C98695005D0416 /* Extensions.swift */,
+				271933CE28F5F699004466C9 /* DataFetcher.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -309,8 +321,10 @@
 			files = (
 				1F66C177234661330006B1DE /* LaunchScreen.storyboard in Resources */,
 				1FF8D5692348083800DB1A4B /* ItemDetailTPSSpec.png in Resources */,
+				271933CD28F5F663004466C9 /* People.json in Resources */,
 				1F66C174234661330006B1DE /* Assets.xcassets in Resources */,
 				1F66C172234661310006B1DE /* Main.storyboard in Resources */,
+				27BBEBD028FCFD5400FE4A54 /* Result.json in Resources */,
 				1F66C19F2347BB4F0006B1DE /* Content.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271933CF28F5F699004466C9 /* DataFetcher.swift in Sources */,
 				1F66C19C2346614F0006B1DE /* ContentService.swift in Sources */,
 				27A97AC327A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift in Sources */,
 				272FE08F274DC5B200033906 /* FeedCell.swift in Sources */,
@@ -343,6 +358,7 @@
 				27C5401B27BC7419007C7EE1 /* StoreController.swift in Sources */,
 				27E4D4F427C98695005D0416 /* Extensions.swift in Sources */,
 				1F66C16F234661310006B1DE /* ViewController.swift in Sources */,
+				27BBEBCE28FCFD3900FE4A54 /* NetworkingViewController.swift in Sources */,
 				1F66C16D234661310006B1DE /* AppDelegate.swift in Sources */,
 				27C428F727B4476200FD302C /* CoreDataStack.swift in Sources */,
 				2703ECF927FBB4C1005D64A6 /* ImagePresenter.swift in Sources */,

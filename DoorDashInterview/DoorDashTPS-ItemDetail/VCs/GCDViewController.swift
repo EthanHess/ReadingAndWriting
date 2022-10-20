@@ -10,6 +10,17 @@ import UIKit
 
 class GCDViewController: UIViewController {
     
+//    let dataFetcher : DataFetcher
+//
+//    //MARK: Dependency injection
+//    init(dataFetcher: DataFetcher) {
+//        self.dataFetcher = dataFetcher
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -18,12 +29,23 @@ class GCDViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchDataAndMeasureDifferencesDG()
+        fetchDataAndMeasureDifferencesSEM()
+        view.backgroundColor = .white
         //fetchDataAndMeasureDifferencesOQ()
+        
+//        _ = genericFunc(someVal: "Hey!")
+//        _ = genericFunc(someVal: 10)
+    }
+    
+    fileprivate func genericFunc<T>(someVal: T) -> T {
+        return someVal
     }
     
     // var arrayClosure: ((_ array: [Int]) -> Void)
     
     //MARK: iterate through random fire closures to simulate async network calls to test different fetch methods and their timing / complexity.
+    
+    //AsyncSequence (replacing Dispatch Group)
     
     //Dispatch Group
     fileprivate func fetchDataAndMeasureDifferencesDG() {
@@ -47,16 +69,38 @@ class GCDViewController: UIViewController {
     }
     
     //Operation Queue
-//    fileprivate func fetchDataAndMeasureDifferencesOQ() {
-//        let array = [1, 2, 3, 4, 5]
-//
-//        let operationQueue = OperationQueue()
-//
-//
-//    }
+    fileprivate func fetchDataAndMeasureDifferencesOQ() {
+        let array = [1, 2, 3, 4, 5]
+
+        let operationQueue = OperationQueue()
+        
+        
+        
+    }
     
-    //Semaphore
     
+    //Semaphore (more to protect a shared resource vs. group where tasks are independent)
+    fileprivate func fetchDataAndMeasureDifferencesSEM() {
+        let array = [1, 2, 3, 4, 5]
+        let dispatchQueue = DispatchQueue(label: "peopleFetch")
+        let dispatchSemaphore = DispatchSemaphore(value: 0)
+        
+        let semEnterTime = Date()
+        dispatchQueue.async { //prevent freezing, will freeze on main queue
+            for num in array {
+                dispatchQueue.asyncAfter(deadline: .now() + Double(num / 2)) {
+                    dispatchSemaphore.signal()
+                }
+                dispatchSemaphore.wait()
+            }
+        }
+        let semEndTime = Date()
+        let timeElapsed = TimeSpaceMeasurer.calculateTimeOfExecution(semEnterTime, semEndTime)
+        print("SEM Finished! \(timeElapsed)")
+    }
+    
+    
+    //MARK: Networking
     
     
     
@@ -71,4 +115,16 @@ class GCDViewController: UIViewController {
     }
     */
 
+}
+
+//Operation subclass (is abstract, need to subclass instead of use directly)
+class dataOperation: Operation {
+    typealias SuccessCompletion = (_ success: Result<Bool, Error>) -> Void
+    var theHandler : (SuccessCompletion)? //If reference to self needed, weakify to avoid retain cycle
+    
+//    func launchOperation() {
+//        if let theHandler = theHandler {
+//            theHandler(.success(true))
+//        }
+//    }
 }

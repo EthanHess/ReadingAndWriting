@@ -36,8 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let theTabController = UITabBarController()
             theTabController.viewControllers = [home, cgdView]
+            theTabController.tabBar.backgroundColor = .white
             
-            application.keyWindow?.rootViewController = theTabController
+            //application.keyWindow?.rootViewController = theTabController
+            window?.rootViewController = theTabController
         } else {
             // Fallback on earlier versions
         }
