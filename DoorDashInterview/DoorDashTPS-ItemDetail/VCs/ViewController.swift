@@ -1,7 +1,6 @@
 import UIKit
 import Combine
 
-//TODO Enum for all possibilities when we add combine
 enum FetchType {
     case standard
     case codable
@@ -309,3 +308,24 @@ extension ViewController: DidChooseOption, DidCloseImagePresenter {
     }
 }
 
+
+//MARK: Weakifiable tutorial credit https://www.youtube.com/watch?v=BGzPK7f13RM
+
+//Replaces weak self syntax with something cleaner
+//TODO incorporate into current code
+protocol Weakifiable: AnyObject { }
+
+extension NSObject: Weakifiable { }
+
+//Self with capital S refers to type that conforms to the protocol (or in some cases as a return type of a static method), T is generic (whatever type)
+extension Weakifiable {
+    func weakify<T>(code: @escaping (Self, T) -> Void) -> (T) -> Void {
+        return {
+            //Boilerplate (code that's repeated multiple places with little to no variation)
+            [weak self] data in
+            guard let self = self else { return }
+            
+            code(self, data)
+        }
+    }
+}
