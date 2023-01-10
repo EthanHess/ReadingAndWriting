@@ -23,6 +23,10 @@
 		271933CF28F5F699004466C9 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271933CE28F5F699004466C9 /* DataFetcher.swift */; };
 		272FE08F274DC5B200033906 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FE08E274DC5B200033906 /* FeedCell.swift */; };
 		275ABB2928F091DD00BAEC3E /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275ABB2828F091DD00BAEC3E /* GCDViewController.swift */; };
+		279BEF20296E0E3E004A01A2 /* GCDVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BEF1F296E0E3E004A01A2 /* GCDVisualizer.swift */; };
+		279BEF22296E0F98004A01A2 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BEF21296E0F98004A01A2 /* Thread.swift */; };
+		279BEF24296E0FA2004A01A2 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BEF23296E0FA2004A01A2 /* Queue.swift */; };
+		279BEF26296E1280004A01A2 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BEF25296E1280004A01A2 /* Task.swift */; };
 		27A97AC327A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A97AC227A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift */; };
 		27BBEBCE28FCFD3900FE4A54 /* NetworkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBEBCD28FCFD3900FE4A54 /* NetworkingViewController.swift */; };
 		27BBEBD028FCFD5400FE4A54 /* Result.json in Resources */ = {isa = PBXBuildFile; fileRef = 27BBEBCF28FCFD5400FE4A54 /* Result.json */; };
@@ -73,6 +77,10 @@
 		271933CE28F5F699004466C9 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		272FE08E274DC5B200033906 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		275ABB2828F091DD00BAEC3E /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
+		279BEF1F296E0E3E004A01A2 /* GCDVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDVisualizer.swift; sourceTree = "<group>"; };
+		279BEF21296E0F98004A01A2 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		279BEF23296E0FA2004A01A2 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		279BEF25296E1280004A01A2 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		27A97AC227A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodChoiceScrollPicker.swift; sourceTree = "<group>"; };
 		27BBEBCD28FCFD3900FE4A54 /* NetworkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingViewController.swift; sourceTree = "<group>"; };
 		27BBEBCF28FCFD5400FE4A54 /* Result.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Result.json; sourceTree = "<group>"; };
@@ -211,8 +219,20 @@
 				272FE08E274DC5B200033906 /* FeedCell.swift */,
 				270DEA9F27E920A300B70784 /* ImageHeaderCell.swift */,
 				2703ECF827FBB4C1005D64A6 /* ImagePresenter.swift */,
+				279BEF27296E12A0004A01A2 /* GCD */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		279BEF27296E12A0004A01A2 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				279BEF1F296E0E3E004A01A2 /* GCDVisualizer.swift */,
+				279BEF21296E0F98004A01A2 /* Thread.swift */,
+				279BEF23296E0FA2004A01A2 /* Queue.swift */,
+				279BEF25296E1280004A01A2 /* Task.swift */,
+			);
+			path = GCD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,10 +380,14 @@
 				1F66C16F234661310006B1DE /* ViewController.swift in Sources */,
 				27BBEBCE28FCFD3900FE4A54 /* NetworkingViewController.swift in Sources */,
 				1F66C16D234661310006B1DE /* AppDelegate.swift in Sources */,
+				279BEF20296E0E3E004A01A2 /* GCDVisualizer.swift in Sources */,
 				27C428F727B4476200FD302C /* CoreDataStack.swift in Sources */,
 				2703ECF927FBB4C1005D64A6 /* ImagePresenter.swift in Sources */,
 				270DEAA027E920A300B70784 /* ImageHeaderCell.swift in Sources */,
+				279BEF24296E0FA2004A01A2 /* Queue.swift in Sources */,
 				275ABB2928F091DD00BAEC3E /* GCDViewController.swift in Sources */,
+				279BEF26296E1280004A01A2 /* Task.swift in Sources */,
+				279BEF22296E0F98004A01A2 /* Thread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

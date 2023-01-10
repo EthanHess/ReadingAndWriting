@@ -144,7 +144,6 @@ class ViewController: UIViewController {
     }
     
     fileprivate func fetchDataAA(_ path: String) {
-        //MARK: A unit of asynchronous work.
         Task {
             await feedDataAsyncAwait(path)
         }
