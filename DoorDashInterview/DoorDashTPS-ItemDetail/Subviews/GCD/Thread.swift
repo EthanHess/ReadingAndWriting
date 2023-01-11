@@ -12,7 +12,7 @@ import UIKit
 class Thread: UIView {
     
     var associatedQueue : Queue?
-    var tasks : [Task] = []
+    var tasks : [SomeTask] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
