@@ -23,9 +23,12 @@
 		271933CF28F5F699004466C9 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271933CE28F5F699004466C9 /* DataFetcher.swift */; };
 		272FE08F274DC5B200033906 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FE08E274DC5B200033906 /* FeedCell.swift */; };
 		275ABB2928F091DD00BAEC3E /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275ABB2828F091DD00BAEC3E /* GCDViewController.swift */; };
+		27833E9B296F3737005BF11C /* SomeQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27833E9A296F3737005BF11C /* SomeQueue.swift */; };
+		27833E9D296F3777005BF11C /* SomeThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27833E9C296F3777005BF11C /* SomeThread.swift */; };
+		27833E9F296F37C4005BF11C /* SomeRunLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27833E9E296F37C4005BF11C /* SomeRunLoop.swift */; };
+		27833EA1296F38E3005BF11C /* LockVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27833EA0296F38E3005BF11C /* LockVisualizer.swift */; };
+		27833EA3296F390A005BF11C /* MainThreadPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27833EA2296F390A005BF11C /* MainThreadPool.swift */; };
 		279BEF20296E0E3E004A01A2 /* GCDVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BEF1F296E0E3E004A01A2 /* GCDVisualizer.swift */; };
-		279BEF22296E0F98004A01A2 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BEF21296E0F98004A01A2 /* Thread.swift */; };
-		279BEF24296E0FA2004A01A2 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BEF23296E0FA2004A01A2 /* Queue.swift */; };
 		27A97AC327A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A97AC227A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift */; };
 		27BA6956296E3D21003DA8A6 /* SomeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA6955296E3D21003DA8A6 /* SomeTask.swift */; };
 		27BBEBCE28FCFD3900FE4A54 /* NetworkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBEBCD28FCFD3900FE4A54 /* NetworkingViewController.swift */; };
@@ -77,9 +80,12 @@
 		271933CE28F5F699004466C9 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		272FE08E274DC5B200033906 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		275ABB2828F091DD00BAEC3E /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
+		27833E9A296F3737005BF11C /* SomeQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeQueue.swift; sourceTree = "<group>"; };
+		27833E9C296F3777005BF11C /* SomeThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeThread.swift; sourceTree = "<group>"; };
+		27833E9E296F37C4005BF11C /* SomeRunLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeRunLoop.swift; sourceTree = "<group>"; };
+		27833EA0296F38E3005BF11C /* LockVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockVisualizer.swift; sourceTree = "<group>"; };
+		27833EA2296F390A005BF11C /* MainThreadPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThreadPool.swift; sourceTree = "<group>"; };
 		279BEF1F296E0E3E004A01A2 /* GCDVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDVisualizer.swift; sourceTree = "<group>"; };
-		279BEF21296E0F98004A01A2 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
-		279BEF23296E0FA2004A01A2 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		27A97AC227A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodChoiceScrollPicker.swift; sourceTree = "<group>"; };
 		27BA6955296E3D21003DA8A6 /* SomeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeTask.swift; sourceTree = "<group>"; };
 		27BBEBCD28FCFD3900FE4A54 /* NetworkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingViewController.swift; sourceTree = "<group>"; };
@@ -228,9 +234,12 @@
 			isa = PBXGroup;
 			children = (
 				279BEF1F296E0E3E004A01A2 /* GCDVisualizer.swift */,
-				279BEF21296E0F98004A01A2 /* Thread.swift */,
-				279BEF23296E0FA2004A01A2 /* Queue.swift */,
+				27833EA2296F390A005BF11C /* MainThreadPool.swift */,
 				27BA6955296E3D21003DA8A6 /* SomeTask.swift */,
+				27833E9A296F3737005BF11C /* SomeQueue.swift */,
+				27833E9C296F3777005BF11C /* SomeThread.swift */,
+				27833E9E296F37C4005BF11C /* SomeRunLoop.swift */,
+				27833EA0296F38E3005BF11C /* LockVisualizer.swift */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -376,18 +385,21 @@
 				272FE08F274DC5B200033906 /* FeedCell.swift in Sources */,
 				27C428F527B4450400FD302C /* TimeSpaceMeasurer.swift in Sources */,
 				27C5401B27BC7419007C7EE1 /* StoreController.swift in Sources */,
+				27833EA3296F390A005BF11C /* MainThreadPool.swift in Sources */,
 				27E4D4F427C98695005D0416 /* Extensions.swift in Sources */,
 				1F66C16F234661310006B1DE /* ViewController.swift in Sources */,
 				27BA6956296E3D21003DA8A6 /* SomeTask.swift in Sources */,
+				27833E9F296F37C4005BF11C /* SomeRunLoop.swift in Sources */,
+				27833EA1296F38E3005BF11C /* LockVisualizer.swift in Sources */,
 				27BBEBCE28FCFD3900FE4A54 /* NetworkingViewController.swift in Sources */,
 				1F66C16D234661310006B1DE /* AppDelegate.swift in Sources */,
 				279BEF20296E0E3E004A01A2 /* GCDVisualizer.swift in Sources */,
 				27C428F727B4476200FD302C /* CoreDataStack.swift in Sources */,
 				2703ECF927FBB4C1005D64A6 /* ImagePresenter.swift in Sources */,
 				270DEAA027E920A300B70784 /* ImageHeaderCell.swift in Sources */,
-				279BEF24296E0FA2004A01A2 /* Queue.swift in Sources */,
 				275ABB2928F091DD00BAEC3E /* GCDViewController.swift in Sources */,
-				279BEF22296E0F98004A01A2 /* Thread.swift in Sources */,
+				27833E9B296F3737005BF11C /* SomeQueue.swift in Sources */,
+				27833E9D296F3777005BF11C /* SomeThread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

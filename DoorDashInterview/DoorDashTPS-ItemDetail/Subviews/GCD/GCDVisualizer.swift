@@ -16,8 +16,22 @@ import UIKit
 
 class GCDVisualizer: UIView {
     
+    //() initializes, without it's just a computed property
+    lazy var mainThreadPool : MainThreadPool = {
+        let pool = MainThreadPool()
+        return pool
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+    }
+    
+    fileprivate func configureSubviews() {
+        
+    }
+    
+    fileprivate func concurrencyTest() {
         
     }
     

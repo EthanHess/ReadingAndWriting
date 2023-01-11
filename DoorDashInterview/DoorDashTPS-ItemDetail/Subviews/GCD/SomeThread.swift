@@ -1,17 +1,18 @@
 //
-//  Thread.swift
+//  SomeThread.swift
 //  DoorDashTPS-ItemDetail
 //
-//  Created by Ethan Hess on 1/10/23.
+//  Created by Ethan Hess on 1/11/23.
 //  Copyright © 2023 Jeff Cosgriff. All rights reserved.
 //
 
 import UIKit
 
 //An abstract data structure where process happen (are executed)
-class Thread: UIView {
+class SomeThread: UIView {
     
-    var associatedQueue : Queue?
+    var assiciatedRunLoop : SomeRunLoop?
+    var associatedQueue : SomeQueue?
     var tasks : [SomeTask] = []
     
     override init(frame: CGRect) {
