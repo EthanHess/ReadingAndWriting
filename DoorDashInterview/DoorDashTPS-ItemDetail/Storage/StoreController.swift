@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-//MARK: Core data, SQL, NSFileManager, Noje.js server
+//MARK: Core data, SQL, NSFileManager, Node.js server
 class StoreController: NSObject {
 
     //MARK: FileManager

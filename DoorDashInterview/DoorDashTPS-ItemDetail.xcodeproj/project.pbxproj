@@ -36,6 +36,7 @@
 		27C428F527B4450400FD302C /* TimeSpaceMeasurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C428F427B4450400FD302C /* TimeSpaceMeasurer.swift */; };
 		27C428F727B4476200FD302C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C428F627B4476200FD302C /* CoreDataStack.swift */; };
 		27C5401B27BC7419007C7EE1 /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C5401A27BC7419007C7EE1 /* StoreController.swift */; };
+		27D48845298C5CB00068349F /* SomeCallStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D48844298C5CB00068349F /* SomeCallStack.swift */; };
 		27E4D4F427C98695005D0416 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E4D4F327C98695005D0416 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		27C428F427B4450400FD302C /* TimeSpaceMeasurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpaceMeasurer.swift; sourceTree = "<group>"; };
 		27C428F627B4476200FD302C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		27C5401A27BC7419007C7EE1 /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
+		27D48844298C5CB00068349F /* SomeCallStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeCallStack.swift; sourceTree = "<group>"; };
 		27E4D4F327C98695005D0416 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +241,7 @@
 				27833E9A296F3737005BF11C /* SomeQueue.swift */,
 				27833E9C296F3777005BF11C /* SomeThread.swift */,
 				27833E9E296F37C4005BF11C /* SomeRunLoop.swift */,
+				27D48844298C5CB00068349F /* SomeCallStack.swift */,
 				27833EA0296F38E3005BF11C /* LockVisualizer.swift */,
 			);
 			path = GCD;
@@ -383,6 +386,7 @@
 				1F66C19C2346614F0006B1DE /* ContentService.swift in Sources */,
 				27A97AC327A89AEF003DCBB4 /* MethodChoiceScrollPicker.swift in Sources */,
 				272FE08F274DC5B200033906 /* FeedCell.swift in Sources */,
+				27D48845298C5CB00068349F /* SomeCallStack.swift in Sources */,
 				27C428F527B4450400FD302C /* TimeSpaceMeasurer.swift in Sources */,
 				27C5401B27BC7419007C7EE1 /* StoreController.swift in Sources */,
 				27833EA3296F390A005BF11C /* MainThreadPool.swift in Sources */,

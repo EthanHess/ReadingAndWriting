@@ -4,6 +4,7 @@ import UIKit
 
 //For Main VC (ViewController)
 struct ContentService {
+    
     /// fetches data for the content of the list
     func getItemData() {
         let path = Bundle.main.path(forResource: "Content", ofType: "json")!
@@ -14,13 +15,45 @@ struct ContentService {
         print(try! JSONSerialization.jsonObject(with: data, options: .allowFragments))
     }
     
-    //MARK: Standard fetching
-    static func fetchJSONData(_ path: String, completion: @escaping((_ feedModels: [String: Any]?, _ theError: Error?) -> Void)) {
+    //MARK: Weakify test
+    func weakifyTest(with completion: @escaping((_ feedModels: [String: Any]?, _ theError: Error?) -> Void)) {
+        let path = Bundle.main.path(forResource: "Content", ofType: "json")!
+        let url = URL(fileURLWithPath: path)
+        let data = try! Data(contentsOf: url)
+        
+        print("JSON DATA INSTANCE \(try! JSONSerialization.jsonObject(with: data, options: .allowFragments))")
+        
+        do {
+            let serializedJSON = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
+            completion(serializedJSON, nil)
+        } catch let tError {
+            completion(nil, tError)
+        }
+    }
+    
+    //MARK: Instance example
+    func fetchJSONDataInstance(_ path: String, completion: @escaping((_ feedModels: [String: Any]?, _ theError: Error?) -> Void)) {
         
         let url = URL(fileURLWithPath: path)
         let data = try! Data(contentsOf: url)
         
-        print("JSON DATA \(try! JSONSerialization.jsonObject(with: data, options: .allowFragments))")
+        print("JSON DATA INSTANCE \(try! JSONSerialization.jsonObject(with: data, options: .allowFragments))")
+        
+        do {
+            let serializedJSON = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
+            completion(serializedJSON, nil)
+        } catch let tError {
+            completion(nil, tError)
+        }
+    }
+    
+    //MARK: Standard fetching
+    static func fetchJSONDataStatic(_ path: String, completion: @escaping((_ feedModels: [String: Any]?, _ theError: Error?) -> Void)) {
+        
+        let url = URL(fileURLWithPath: path)
+        let data = try! Data(contentsOf: url)
+        
+        print("JSON DATA STATIC \(try! JSONSerialization.jsonObject(with: data, options: .allowFragments))")
         
         do {
             let serializedJSON = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]

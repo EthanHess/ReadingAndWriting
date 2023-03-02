@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         configureTable()
         view.backgroundColor = .white
         // self.gradientForView(self.view, .white, .lightGray)
+        
     }
     
     //Can discard this?
@@ -96,22 +97,44 @@ class ViewController: UIViewController {
         }
     }
     
+    //Note, only classes can be captured strongly in a closure
     fileprivate func fetchDataStandard(_ path: String) {
         let preFetchTime = Date()
-        ContentService.fetchJSONData(path) { feedModels, theError in
-            //Check for error
+        ContentService.fetchJSONDataStatic(path) { feedModels, theError in
+            guard let feed = feedModels else {
+                return
+            }
+            self.contentServiceCallbackHandler(feed, preFetchTime: preFetchTime, staticCall: true, weakify: false, reloadTable: false)
+        }
+        
+        //Dependency Injection, calling this function on instance which is owned (strongly) by this class (VC)
+        //Need to cast "self" as weak here to avoid retain cycle
+        contentService.fetchJSONDataInstance(path) { [weak self] feedModels, theError in
+            guard let self = self else { return } //This way we don't need self?
             guard let feed = feedModels else {
                 return //Don't want this? If let would be better with DG
             }
-            print("FEED JSON \(feed)")
-            //TODO also fetch header URL
-            self.feedItems = feed["content_items"] as? [[String : Any]] ?? [[:]]
-            self.mainImageURLString = feed["header_image_url"] as? String ?? ""
-            
-            let postFetchTime = Date()
-            let timeTakenStandard = TimeSpaceMeasurer.calculateTimeOfExecution(preFetchTime, postFetchTime)
-            print("Time taken standard \(timeTakenStandard)")
-            
+            self.contentServiceCallbackHandler(feed, preFetchTime: preFetchTime, staticCall: false, weakify: false, reloadTable: false)
+        }
+        
+        //With weakifiable extension (need to factor in path)
+        contentService.weakifyTest(with: weakify(code: { strongSelf, data, error in
+            if error == nil && data != nil {
+                strongSelf.contentServiceCallbackHandler(data!, preFetchTime: preFetchTime, staticCall: false, weakify: true, reloadTable: true)
+            }
+        }))
+    }
+    
+    //"static" is keyword so call it "staticCall"
+    fileprivate func contentServiceCallbackHandler(_ feed: [String: Any], preFetchTime: Date, staticCall: Bool, weakify: Bool, reloadTable: Bool) {
+        self.feedItems = feed["content_items"] as? [[String : Any]] ?? [[:]]
+        self.mainImageURLString = feed["header_image_url"] as? String ?? ""
+        
+        let postFetchTime = Date()
+        let timeTakenStandard = TimeSpaceMeasurer.calculateTimeOfExecution(preFetchTime, postFetchTime)
+        print("Time taken standard \(timeTakenStandard) Static \(staticCall) Weakify \(weakify)")
+        
+        if reloadTable {
             self.reloadOnMainQueue()
         }
     }
@@ -308,23 +331,3 @@ extension ViewController: DidChooseOption, DidCloseImagePresenter {
 }
 
 
-//MARK: Weakifiable tutorial credit https://www.youtube.com/watch?v=BGzPK7f13RM
-
-//Replaces weak self syntax with something cleaner
-//TODO incorporate into current code
-protocol Weakifiable: AnyObject { }
-
-extension NSObject: Weakifiable { }
-
-//Self with capital S refers to type that conforms to the protocol (or in some cases as a return type of a static method), T is generic (whatever type)
-extension Weakifiable {
-    func weakify<T>(code: @escaping (Self, T) -> Void) -> (T) -> Void {
-        return {
-            //Boilerplate (code that's repeated multiple places with little to no variation)
-            [weak self] data in
-            guard let self = self else { return }
-            
-            code(self, data)
-        }
-    }
-}
