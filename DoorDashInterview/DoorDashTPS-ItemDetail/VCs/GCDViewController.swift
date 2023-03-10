@@ -118,7 +118,7 @@ class GCDViewController: UIViewController {
 }
 
 //Operation subclass (is abstract, need to subclass instead of use directly)
-class dataOperation: Operation {
+class DataOperation: Operation {
     typealias SuccessCompletion = (_ success: Result<Bool, Error>) -> Void
     var theHandler : (SuccessCompletion)? //If reference to self needed, weakify to avoid retain cycle
     
