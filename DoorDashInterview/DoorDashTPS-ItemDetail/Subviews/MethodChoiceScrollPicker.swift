@@ -112,7 +112,7 @@ class MethodChoiceScrollPicker: UITableViewCell {
     }
     
     fileprivate func commenceBounceAnimation(_ label: UILabel) {
-        layerScaleAnimation(layer: label.layer, duration: 1.5, fromValue: 1, toValue: 1.5)
+        layerScaleAnimation(layer: label.layer, duration: 1.5, fromValue: 1, toValue: 1.25)
     }
     
     //MARK: https://stackoverflow.com/questions/16447236/cabasicanimation-transform-scale-keep-in-center

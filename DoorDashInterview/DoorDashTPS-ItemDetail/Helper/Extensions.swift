@@ -73,7 +73,7 @@ extension UIImageView {
 }
 
 
-//MARK: Weakifiable tutorial credit https://www.youtube.com/watch?v=BGzPK7f13RM
+//MARK: Weakifiable tutorial credit (I changed / added a few things) https://www.youtube.com/watch?v=BGzPK7f13RM
 
 //Replaces weak self syntax with something cleaner
 //TODO incorporate into current code
