@@ -173,7 +173,9 @@ class FeedCell: UITableViewCell {
 
 @available(iOS 13.0, *)
 extension FeedCell {
+    //MARK: For publisher
     enum Action { //TODO add others
         case showContent(ContentItem)
     }
 }
+
