@@ -16,6 +16,10 @@ import UIKit
 
 class GCDVisualizer: UIView {
     
+    //'lazy' cannot be used on a computed property since we want to postpone initialization (the whole point of lazy)
+    
+    //lazy has to be var becaue the value will change when it's mutated (used) unlike a constant that could be initialized on class init
+    
     //() initializes, without it's just a computed property
     lazy var mainThreadPool : MainThreadPool = {
         let pool = MainThreadPool()

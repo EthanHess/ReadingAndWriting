@@ -69,14 +69,12 @@ class GCDViewController: UIViewController {
     }
     
     //Operation Queue
-    fileprivate func fetchDataAndMeasureDifferencesOQ() {
-        let array = [1, 2, 3, 4, 5]
-
-        let operationQueue = OperationQueue()
-        
-        
-        
-    }
+//    fileprivate func fetchDataAndMeasureDifferencesOQ() {
+//        let array = [1, 2, 3, 4, 5]
+//        let operationQueue = OperationQueue()
+//
+//        //TODO imp.
+//    }
     
     
     //Semaphore (more to protect a shared resource vs. group where tasks are independent)

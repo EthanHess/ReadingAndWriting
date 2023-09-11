@@ -13,23 +13,29 @@ import Combine
 class FeedCell: UITableViewCell {
     
     //MARK: A subject that broadcasts elements to downstream subscribers.
+    
+    //Appropriate for something like a button press (takes place of a delegate in this case, passing data to subscribers)
     var actionPublisher = PassthroughSubject<Action, Never>()
+    
+    //Appropriate for sharing state, not just a single action
+    var someState = CurrentValueSubject<SomeState, Never>(.on)
+    
     
     private var currentItem: ContentItem?
     private var currentItemDict: [String : Any]!
 
-    var theTitleLabel : UILabel = {
+    let theTitleLabel : UILabel = {
         let tl = UILabel()
         return tl
     }()
     
     //For "content", long paragraph text
-    var contentLabel : UILabel = {
+    let contentLabel : UILabel = {
         let cl = UILabel()
         return cl
     }()
     
-    var smallImageView : UIImageView = {
+    let smallImageView : UIImageView = {
         let sIv = UIImageView()
         sIv.contentMode = .scaleAspectFit
         sIv.backgroundColor = .lightGray
@@ -38,7 +44,7 @@ class FeedCell: UITableViewCell {
         return sIv
     }()
     
-    var activityIndicator : UIActivityIndicatorView = {
+    let activityIndicator : UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView()
         ai.hidesWhenStopped = true
         return ai
@@ -57,12 +63,19 @@ class FeedCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func publishAction() {
+    private func publishAction() {
         guard let theItem = currentItem else {
             print("No item")
             return
         }
         actionPublisher.send(.showContent(theItem))
+        
+        //Test
+        perform(#selector(stateSend), with: nil, afterDelay: 0.05)
+    }
+    
+    @objc private func stateSend() {
+        someState.send(.on)
     }
 
     func populate(with item: ContentItem) {
@@ -176,6 +189,11 @@ extension FeedCell {
     //MARK: For publisher
     enum Action { //TODO add others
         case showContent(ContentItem)
+    }
+    
+    enum SomeState {
+        case on
+        case off
     }
 }
 

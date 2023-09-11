@@ -16,7 +16,7 @@ class MethodChoiceScrollPicker: UITableViewCell {
 
     //MARK: TODO add scroll view for storage options, not just fetch
     
-    var fetchOptionsScrollView : UIScrollView = {
+    let fetchOptionsScrollView : UIScrollView = {
         let sv = UIScrollView()
         sv.isPagingEnabled = true
         sv.backgroundColor = .darkGray

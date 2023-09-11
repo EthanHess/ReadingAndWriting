@@ -13,17 +13,16 @@ var memoryIDCache : [String: String] = [:]
 @available(iOS 13.0, *)
 class ImageHeaderCell: UITableViewCell {
     
-    //MARK: Properties
-    var mainImageView : UIImageView = {
+    //MARK: Properties (constants, closure based initialized properties generally don't need to be var)
+    let mainImageView : UIImageView = {
         let mIv = UIImageView()
         mIv.contentMode = .scaleAspectFit
-//        mIv.backgroundColor = .lightGray
         mIv.layer.cornerRadius = 5
         mIv.layer.masksToBounds = true
         return mIv
     }()
     
-    var activityIndicator : UIActivityIndicatorView = {
+    let activityIndicator : UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView()
         ai.hidesWhenStopped = true
         return ai
@@ -44,7 +43,6 @@ class ImageHeaderCell: UITableViewCell {
         
         //MARK: will blur whatever is behind it, can add glassy backround image or something
   //      mainImageView.addBlur()
-//        contentView.backgroundColor = .cyan
 //        contentView.addBlur()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
@@ -56,6 +54,8 @@ class ImageHeaderCell: UITableViewCell {
             if (memoryIDCache[idString] == nil) { //Only add gradient to object if hasn't been added yet, otherwise many layers are created. Can also remove sublayers in "prepareForReuse"
                 self.contentView.addBackgroundGradient(true)
                 memoryIDCache[idString] = ""
+                self.contentView.layer.cornerRadius = 5
+                self.contentView.layer.masksToBounds = true
             }
             self.contentView.addSubview(self.mainImageView)
             self.mainImageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 0)

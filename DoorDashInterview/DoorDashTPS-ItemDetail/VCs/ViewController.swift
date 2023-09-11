@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     //MARK: Properties
     let contentService = ContentService()
     
-    var feedTable : UITableView = {
+    let feedTable : UITableView = {
         let tbl = UITableView(frame: .zero)
         tbl.backgroundColor = .clear
         return tbl
@@ -269,6 +269,22 @@ extension ViewController: TableFunctions {
                     self?.imagePresentHandler(theItem.image_url)
                 }
             }).store(in: &tokens) //Stores this type-erasing cancellable instance in the specified set.
+            
+            //MARK: CurrentValueSubject
+            theCell.someState.sink { completion in
+                print("finished \(completion)")
+                if completion == .finished {
+                    //Do something
+                }
+            } receiveValue: { state in
+                print("state \(state)")
+                if state == .on {
+                    
+                } else {
+                    
+                }
+            }.store(in: &tokens)
+
         
             //MARK: can wrap this function outside of cellForRow
             switch fetchType {
