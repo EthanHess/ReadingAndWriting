@@ -35,6 +35,13 @@ class GCDViewController: UIViewController {
         
 //        _ = genericFunc(someVal: "Hey!")
 //        _ = genericFunc(someVal: 10)
+        
+        gcdSetup()
+    }
+    
+    fileprivate func gcdSetup() {
+        let lv = LockVisualizer() //TODO add to screen inside GCDVisualizer
+        //view.addSubview(lv)
     }
     
     fileprivate func genericFunc<T>(someVal: T) -> T {
